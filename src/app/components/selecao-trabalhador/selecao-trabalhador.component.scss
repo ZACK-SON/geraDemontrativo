@@ -1,0 +1,38 @@
+@use '@angular/material' as mat;
+
+// Customize the entire app. Change :root to your selector if you want to scope the styles.
+.mat-mdc-raised-button {
+  background-color: rgba(83, 88, 88, 0.335) !important;
+  color: rgb(9, 9, 9) !important;
+  min-width: 150px;
+  max-width: 325px;
+  width: 100%;
+    min-height: 60px;
+    max-height: 100px;
+}
+.mat-mdc-raised-button:disabled {
+  background-color: red !important;
+}
+
+.nomes {
+  min-width: 150px;
+  max-width: 325px;
+  width: 100%;
+
+}
+
+// .example-full-width {
+//   width: 100%;
+// }
+
+.example-month-picker .mat-calendar-period-button {
+  pointer-events: none;
+}
+
+.example-month-picker .mat-calendar-arrow {
+  display: none;
+}
+
+.example-button-row {
+  max-width: 600px;
+}

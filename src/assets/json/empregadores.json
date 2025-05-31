@@ -1,0 +1,40 @@
+[
+    {
+        "nomeEmpregador": "ARLEY COELHO DA SILVEIRA",
+        "codEstabelecimento": "220.359.311/00123",
+        "local": "FAZ. CAB. DO ONÇA",
+        "empregados": [
+            {
+                "nomeTrabalhador": "PAULO RICARDO DA SILVA FERREIRA",
+                "matricula": "01112022",
+                "salario": 2300
+            }
+        ]
+    },
+
+    {
+        "nomeEmpregador": "JOSE AUGUSTO FIGUEIREDO",
+        "codEstabelecimento": "001.592.202/00182",
+        "local": "FAZENDA SANTA ROSA",
+        "empregados": [
+            {
+                "nomeTrabalhador": "FABIO JUNIOR DA SILVA",
+                "matricula": "01092010",
+                "salario": 1518
+            }
+        ]
+    },
+
+    {
+        "nomeEmpregador": "JOÃO OCTÁVIO FERREIRA FILHO",
+        "codEstabelecimento": "557.357.461/001-11",
+        "local": "FAZENDA SÃO JOÃO",
+        "empregados": [
+            {
+                "nomeTrabalhador": "JESSICA FERNANDA FERREIRA",
+                "matricula": "01042025",
+                "salario": 1518
+            }   
+        ]
+    }
+]

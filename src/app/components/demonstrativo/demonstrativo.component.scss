@@ -1,0 +1,342 @@
+div{
+    margin: 10px 0px 0px 10px;  
+}
+
+.divEmpregador{
+    border: 1px solid black;
+    padding: 0px 0px 0px 0px;
+    width: 750px;
+}
+.nomeEmpregador{
+
+    padding: 0px 0px 0px 0px;
+    /*position:relative; */
+    /*display: inline; */ /* Div dentro de div fica em uma única linha */
+}
+
+.cei{
+    /*position:relative; */
+    display: inline; /* Div dentro de div fica em uma única linha */
+    margin: 0px 0px 0px 10px; 
+    padding: 0px 0px 0px 0px; 
+}
+
+
+.nrCei{
+    /*position:relative; */
+    display: inline; /* Div dentro de div fica em uma única linha */
+    margin: 0px 60px 0px 0px; 
+    padding: 0px 0px 0px 0px; 
+}
+
+.cc{
+    /*position:relative; */
+    display: inline; /* Div dentro de div fica em uma única linha */
+    padding: 0px 0px 0px 0px; 
+}
+
+
+.nomeEstabelecimento{
+    /*position:relative; */
+    display: inline; /* Div dentro de div fica em uma única linha */
+    margin: 0px 0px 0px 0px; 
+    padding: 0px 90px 0px 0px; 
+    
+}
+
+
+
+.linhaAbaixoEstabelecimento{
+    position:relative;
+    top: 18px;
+    bottom: 0px;
+    right: 0px;
+    display: inline; /* Div dentro de div fica em uma única linha */
+    padding: 0px 20px 0px 0px;
+    left: -150px;
+}
+
+.folha{
+    /*position:relative; */
+    display: inline; /* Div dentro de div fica em uma única linha */
+    padding: 0px 20px 0px 0px; 
+    
+}
+.linhaAbaixoFolhaMensal{
+    position:relative;
+    display: inline; /* Div dentro de div fica em uma única linha */
+    top: 0px;
+    left: 605px; 
+    bottom: 0px;
+    right: 0px;
+    
+    padding: 0px 0px 0px 0px;
+     
+}      
+
+.mesReferencia{
+    display: inline; /* Div dentro de div fica em uma única linha */
+    padding: 0;
+    margin: 0;
+}
+
+.nrMatricula{
+    display: inline; /* Div dentro de div fica em uma única linha */
+    padding: 0;
+    margin: 0;
+}
+
+.nomeEmpregado{
+    display: inline; /* Div dentro de div fica em uma única linha */
+    padding: 0;
+    margin: 0;
+}
+.reciboViaEmpregador{
+    border: 1px solid black;
+    position: relative;
+    height: 450px;
+    width: 850px;
+}
+
+.reciboViaTrabalhador{
+    border: 1px solid black;
+    position: relative;
+    height: 450px;
+    width: 850px;
+}
+
+#recorte{
+    border-bottom: 1px dashed black;
+    padding: 0;
+    margin: 20px 0px 20px 10px ;
+    width: 850px;
+}
+
+
+// .divRecibo{
+//     border: 1px solid black;
+//     padding: 0px 0px 0px 0px;
+    
+//     transform: rotate(270deg); 
+//     position: absolute;
+//     /* top: 150px; */
+//     width: 430px;
+//     bottom: 188px;
+//     left: 580px;
+//     height: 70px;
+    
+// }
+.declaracaoRecibo{
+    font-size: 11px;
+    margin: 5px 0px 5px 11px;
+    padding: 0px 0px 0px 0px;
+}
+.dataReciboVazio{
+    display: inline; /* Div dentro de div fica em uma única linha */
+    margin: 0px 0px 0px 20px;
+}
+
+.dataRecibo{
+    position: relative;
+    
+    font-size: 10px;
+    display: block;
+    margin: 0px 20px 0px 20px;
+    top:-1px;
+    left: 40px;
+}
+
+
+.assinaturaReciboBranco{
+    display: inline; /* Div dentro de div fica em uma única linha */
+    margin: 0px 0px 0px 20px;
+}
+
+.assinaturaRecibo{
+    position: relative;
+    font-size: 10px;
+    display: block; 
+    margin: 0px 0px 0px 20px;
+    top:-15px;
+    left: 225px;
+}
+
+.decimoTerceiroSalarioNovembro{
+    display: none;
+}
+
+.decimoTerceiroSalarioDezembro{
+    display: none;
+}
+
+#tabelaDescricao{
+    margin: 0px 0px 0px 10px;
+    padding: 0;
+    text-align: center;
+    
+}
+
+#tabelaBases{
+    th, td{
+        text-align: center;
+        border-top: 0;
+        border-bottom: 0;
+        border-left: 0;
+        border-right: 0;
+    }
+}
+
+.fimTabelaDescricao{
+    height: 90px;
+
+    
+}
+
+
+#observacoes{
+        font-weight: 200;
+        font-size: 15px;
+}
+table{
+    /* border:1px solid black; */
+    border-collapse: collapse;
+    width: 752px;
+    margin: 0;
+    padding: 0;
+}
+
+#codigo{
+    width: 35px;
+    
+}
+
+#descricao{
+    width: 49%;
+}
+
+th{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+td {
+
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    /* border:1px solid black; */
+    
+  }
+
+.liquido{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.tableEmpregador {
+    margin-top: 10px;
+    td{
+
+        border-style: none;
+        padding: 0px 0px 0px 10px;
+        text-align: center;
+    }
+
+}
+
+
+
+.nomeEmpregador{
+    text-align: left;
+}
+
+.divTrabalhador{
+     margin: 0px 0px 0px 10px;
+     border: 1px solid black;
+     padding: 0px 0px 0px 0px;
+     width: 750px;
+     height: 50px;
+}
+
+.codigo{
+    font-size: 10px;
+    display: inline; /* Div dentro de div fica em uma única linha */
+    margin: 0px 0px 0px 0px;
+    padding: 0px 30px 0px 0px; 
+}
+
+.linhaAbaixoCodigo{
+    position:relative;
+    font-size: 16px;
+    display: inline; /* Div dentro de div fica em uma única linha */
+    top: 18px;
+    bottom: 0px;
+    right: 0px;
+    left:-40px;
+}
+.nomeTrabalhador{
+    font-size: 10px;
+    display: inline; /* Div dentro de div fica em uma única linha */
+    margin: 0px 0px 0px 0px;
+    padding: 0px 20px 0px 0px; 
+    
+}
+
+.linhaAbaixoTrabalhador{
+    position:relative;
+    font-size: 16px;
+    display: inline; /* Div dentro de div fica em uma única linha */
+    top: 18px;
+    bottom: 0px;
+    right: 0px;
+    left:-100px;
+    font-weight:900 ;
+}
+.cbo{
+    font-size: 10px;
+    display: inline; /* Div dentro de div fica em uma única linha */
+    margin: 0px 0px 0px 0px;
+    padding: 0px 10px 0px 0px;
+}
+
+.nrCbo{
+    position:relative;
+    font-size: 16px;
+    display: inline; /* Div dentro de div fica em uma única linha */
+    top: 18px;
+    bottom: 0px;
+    right: 0px;
+    left:-35px;
+}
+
+.departamento{
+    font-size: 10px;
+    display: inline; /* Div dentro de div fica em uma única linha */
+    margin: 0px 0px 0px 0px;
+    padding: 0px 20px 0px 0px;
+}
+
+.nrDepartamento{
+    position:relative;
+    font-size: 16px;
+    display: inline; /* Div dentro de div fica em uma única linha */
+    top: 18px;
+    bottom: 0px;
+    right: 0px;
+    left:-45px;
+}
+.filial{
+    font-size: 10px;
+    display: inline; /* Div dentro de div fica em uma única linha */
+    margin: 0px 0px 0px 0px;
+}
+.nrFilial{
+    position:relative;
+    font-size: 16px;
+    display: inline; /* Div dentro de div fica em uma única linha */
+    top: 18px;
+    bottom: 0px;
+    right: 0px;
+    left: -25px;   
+}

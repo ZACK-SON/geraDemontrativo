@@ -1,0 +1,89 @@
+<h3>Geração de Demonstrativo de Pagamento</h3>
+<form (ngSubmit)="onSubmit()">
+    <mat-form-field class="nomes">
+        <mat-label>Empregador</mat-label>
+        <mat-select 
+        [(ngModel)]="empregadorSelecionado" 
+        name="empregador"
+        (selectionChange)="onEmpregadorChange($event)">
+            <mat-option *ngFor="let empregador of empregadores"  [value]="empregador.nomeEmpregador">{{empregador.nomeEmpregador}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+
+    <ng-container *ngIf="trabalhadores.length > 0">
+        <mat-form-field class="nomes">
+            <mat-label>Trabalhador</mat-label>
+            <mat-select 
+            [(ngModel)]="trabalhadorSelecionado" 
+            name="trabalhador"
+            (selectionChange)="onTrabalhadorChange($event)">
+                <mat-option *ngFor="let trabalhador of trabalhadores"  [value]="trabalhador">{{trabalhador.nomeTrabalhador}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+     </ng-container>
+
+     <ng-container *ngIf="trabalhadorSelecionado">
+            <mat-form-field class="example-full-width">
+                <mat-label>Salário</mat-label>
+                <input type="currency" matInput [formControl]="salarioFormControl" [errorStateMatcher]="matcher">
+                <mat-hint>Se o valor acima estiver incorreto, corrija!</mat-hint>
+                
+                <mat-error *ngIf="salarioFormControl.hasError('email') && !salarioFormControl.hasError('required')">
+                    Please enter a valid email address
+                </mat-error>
+  
+                <mat-error *ngIf="salarioFormControl.hasError('required')">
+                    Necessário informar o <strong>salário</strong>
+                </mat-error>    
+            </mat-form-field>
+    
+
+
+        <mat-form-field>
+        <mat-label>Mês e Ano</mat-label>
+        <input matInput [matDatepicker]="dp" [formControl]="date">
+        <mat-hint>Se o mês acima não for o correto, selecione outro.</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="dp"></mat-datepicker-toggle>
+        <mat-datepicker #dp
+                        startView="multi-year"
+                        (monthSelected)="setMonthAndYear($event, dp)"
+                        panelClass="example-month-picker">
+        </mat-datepicker>
+        </mat-form-field>
+
+
+
+   
+
+
+        <button mat-raised-button (click) = "printPDF()">Gerar Demonstrativo</button>
+
+        <!-- type="submit" -->
+
+    </ng-container>
+</form>
+
+
+<div *ngIf="resultado" class="resultado">
+  <h4>Dados enviados:</h4>
+  <p><strong>Empregador:</strong> {{ resultado.empregador }}</p>
+  <p><strong>Trabalhador:</strong> {{ resultado.trabalhador }}</p>
+  <p><strong>Salário:</strong> {{ resultado.salario }}</p>
+  <p><strong>Data:</strong> {{ resultado.data }}</p>
+</div>
+
+
+<!-- <div #conteudoPDF style="display: block;"> -->
+
+    <div #conteudoPDF>
+        <app-demonstrativo></app-demonstrativo>
+    </div>
+  
+<!-- </div> -->
+
+<!-- <ul>
+    <li *ngFor="let item of foods">
+        {{item.value}} - {{item.viewValue}}
+    </li>
+</ul> -->
