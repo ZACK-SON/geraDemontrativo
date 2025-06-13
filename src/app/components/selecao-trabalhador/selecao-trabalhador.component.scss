@@ -36,3 +36,54 @@
 .example-button-row {
   max-width: 600px;
 }
+
+.divRecibo{
+    border: 1px solid black;
+    margin-top: 0px;
+    margin-left: 0px;
+    padding: 0px 0px 0px 0px;
+    
+    // transform: rotate(270deg); 
+    // position: absolute;
+    top: 150px; 
+    width: 450px;
+    bottom: 188px;
+    left: 180px;
+    height: 70px;
+    
+}
+
+.declaracaoRecibo{
+    font-size: 11px;
+    margin: 5px 0px 5px 11px;
+    padding: 0px 0px 0px 0px;
+}
+.dataReciboVazio{
+    display: inline; /* Div dentro de div fica em uma única linha */
+    margin: 0px 0px 0px 20px;
+}
+
+.dataRecibo{
+    position: relative;
+    
+    font-size: 10px;
+    display: block;
+    margin: 0px 20px 0px 20px;
+    top:-5px;
+    left: 40px;
+}
+
+
+.assinaturaReciboBranco{
+    display: inline; /* Div dentro de div fica em uma única linha */
+    margin: 0px 0px 0px 90px;
+}
+
+.assinaturaRecibo{
+    position: relative;
+    font-size: 10px;
+    display: block; 
+    margin: 0px 0px 0px 20px;
+    top: -25px;
+    left: 225px;
+}
