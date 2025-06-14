@@ -1,17 +1,17 @@
+<!-- <ng-template [ngIf]="demonstrativoVisivel"> -->
 
+<main class="container">
 
+    <div class="reciboViaEmpregador">
 
-
-       <div class="reciboViaEmpregador">
-
-            <table class="tableEmpregador">
+        <table class="tableEmpregador">
                 <tr>
-                    <td colspan="3" class="nomeEmpregador" style="text-align: left;">Teste nomeEmpregador</td>
+                    <td colspan="3" class="nomeEmpregador" style="text-align: left;">{{nomeEmpregador}}</td>
                 </tr>
     
                 <tr>
-                    <td class="codEstabelecimento" style="text-align: left;">Teste codEstabelecimento</td>
-                    <td class="localEstabelecimento">Teste localEstabelecimento</td>
+                    <td class="codEstabelecimento" style="text-align: left;">{{codEstabelecimento}}</td>
+                    <td class="localEstabelecimento">{{local}}</td>
                     <td>Folha Mensal</td>
                 </tr>
     
@@ -19,48 +19,15 @@
                     <td></td>
                     <td>Trabalhador Rural</td>
                     <td>
-                        <p class="mesReferencia"></p> de 2024
+                        <p class="mesReferencia">{{data | mesAnoExtenso}}</p>
                     </td>
                 </tr>
                     
-            </table>
+        </table>
 
 
 
 
-            <!-- <div class="divEmpregador">
-
-                <div class="nomeEmpregador">
-                    ARLEY COELHO DA SILVEIRA
-                </div>
-
-                <div class="cei">
-                    CEI:
-                </div>
-
-                <div class="nrCei">
-                    00060020055088
-                </div>
-
-                <div class="cc">
-                    CC:
-                </div>
-
-                <div class="nomeEstabelecimento">
-                    FAZ. CAB. DO ONÇA
-                    <div class="linhaAbaixoEstabelecimento">
-                        Trabalhador Rural
-                    </div>
-
-                </div>
-
-                <div class="folha">
-                    Folha Mensal
-                    <div class="linhaAbaixoFolhaMensal">
-                        <p class="mesReferencia"></p> de 2024
-                    </div>
-                </div>
-            </div> -->
 
 
 
@@ -98,32 +65,10 @@
                 
             </div>
 
-            <!-- <div class="divRecibo">
-
-                <div class="declaracaoRecibo">
-                    DECLARO TER RECEBIDO A IMPORTÂNCIA LÍQUIDA DISCRIMINADA NESTE RECIBO
-                </div>
-                <div class="dataReciboVazio">
-                    ____/____/________
-                </div>
-
-                <div class="assinaturaReciboBranco">
-                    _____________________________
-                </div>
-
-                <div class="dataRecibo">
-                    DATA
-                </div>
-
-                <div class="assinaturaRecibo">
-                    ASSINATURA DO FUNCIONÁRIO
-                </div>
 
 
-            </div> -->
-
-            <div id="tabelaDescricao">
-                <table>
+        <div id="tabelaDescricao">
+            <table>
                     <tr>
                       <th id="codigo">CÓD.</th>
                       <th id="descricao">DESCRIÇÃO</th>
@@ -135,7 +80,7 @@
                       <td>001</td>
                       <td>SALÁRIO</td>
                       <td>30</td>
-                      <td class="valorSalarioBruto">{{salario}}</td>
+                      <td class="valorSalarioBruto">{{salario | currency:'BRL':'symbol':'1.2-2':'pt-BR'}}</td>
                       <td></td>
                     </tr>
 
@@ -152,7 +97,7 @@
                             <td>013</td>
                             <td>13º SALÁRIO</td>
                             <td>30</td>
-                            <td class="valorSalarioBruto">{{salario}}</td>
+                            <td class="valorSalarioBruto">{{salario | currency:'BRL':'symbol':'1.2-2':'pt-BR'}}</td>
                             <td></td>
                         </tr>
 
@@ -180,24 +125,25 @@
                             <td class="irrf"></td>
                         </tr>
 
-                    <!-- </div> -->
 
                     <tr class="linhaInss">
                       <td>201</td>
                       <td>INSS</td>
-                      <td class="aliquotaEfetivaInss"></td>
+                      <td class="aliquotaEfetivaInss">{{aliquotaEfetiva}}%</td>
                       <td></td>
-                      <td class="inss"></td>
+                      <td class="inss">{{valorInss  | currency:'BRL':'symbol':'1.2-2':'pt-BR'}}</td>
                     </tr>
 
-                    <tr class = "linhaIrrf">
-                        <td>203</td>
-                        <td>IRRF</td>
-                        <td class="aliquotaEfetiva"></td>
-                        <td></td>
-                        <td class="irrf"></td>
-                    </tr>
-
+                     <ng-template [ngIf]="irrf>0">
+                        <tr class = "linhaIrrf">
+                            <td>203</td>
+                            <td>IRRF</td>
+                            <td class="aliquotaEfetiva">{{aliquotaEfetivaIrrf}}%</td>
+                            <td></td>
+                            <td class="irrf">{{irrf   | currency:'BRL':'symbol':'1.2-2':'pt-BR'}}</td>
+                        </tr>
+                    </ng-template>
+                    
                     <tr class="fimTabelaDescricao">
                         <td></td>
                         <td></td>
@@ -218,18 +164,18 @@
                       </tr>
 
                       <tr>
-                        <td class="valorTotalCreditos"></td>
-                        <td class="totalDescontos"></td>
+                        <td class="valorTotalCreditos">{{salario | currency:'BRL':'symbol':'1.2-2':'pt-BR'}}</td>
+                        <td class="totalDescontos">{{totalDescontos | currency:'BRL':'symbol':'1.2-2':'pt-BR'}}</td>
                       </tr>
 
                       <tr>
                         <td class="liquido">Líquido a receber -></td>
-                        <td class="liquido salarioLiquido"><strong></strong></td>
+                        <td class="liquido salarioLiquido"><strong>{{salarioLiquido   | currency:'BRL':'symbol':'1.2-2':'pt-BR'}}</strong></td>
                       </tr>
 
-                  </table>
+            </table>
 
-                  <table id="tabelaBases">
+            <table id="tabelaBases">
                     <tr>
                         <th>Salário Base</th>
                         <th>Base Cálc. INSS</th>
@@ -240,33 +186,34 @@
                     </tr>
 
                     <tr>
-                        <td class="valorSalarioBruto"></td>
-                        <td class="valorSalarioBruto"></td>
-                        <td class="valorSalarioBruto"></td>
-                        <td class="valorFgts"></td>
-                        <td class="baseCalculoIrrf"></td>
-                        <td class="faixaIrrf"></td>
+                        <td class="valorSalarioBruto">{{salario | currency:'BRL':'symbol':'1.2-2':'pt-BR'}}</td>
+                        <td class="valorSalarioBruto">{{salario | currency:'BRL':'symbol':'1.2-2':'pt-BR'}}</td>
+                        <td class="valorSalarioBruto">{{salario | currency:'BRL':'symbol':'1.2-2':'pt-BR'}}</td>
+                        <td class="valorFgts">{{valorFgts | currency:'BRL':'symbol':'1.2-2':'pt-BR'}}</td>
+                        <td class="baseCalculoIrrf">{{baseCalculoIrrf  | currency:'BRL':'symbol':'1.2-2':'pt-BR'}}</td>
+                        <td class="faixaIrrf">{{faixa}}</td>
                     </tr>
 
-                  </table>
-            </div>
-
+            </table>
         </div>
 
-        <div id="recorte"></div>
+    </div>
+    
 
+<div id="recorte"></div>
 
+   
     <div class="reciboViaTrabalhador">
 
         
         <table class="tableEmpregador">
             <tr>
-                <td colspan="3" class="nomeEmpregador" style="text-align: left;">Teste nomeEmpregador</td>
+                <td colspan="3" class="nomeEmpregador" style="text-align: left;">{{nomeEmpregador}}</td>
             </tr>
 
             <tr>
-                <td class="codEstabelecimento" style="text-align: left;">Teste codEstabelecimento</td>
-                <td class="localEstabelecimento">Teste localEstabelecimento</td>
+                <td class="codEstabelecimento" style="text-align: left;">{{codEstabelecimento}}</td>
+                <td class="localEstabelecimento">{{local}}</td>
                 <td>Folha Mensal</td>
             </tr>
 
@@ -274,44 +221,13 @@
                 <td></td>
                 <td>Trabalhador Rural</td>
                 <td>
-                    <p class="mesReferencia"></p> de 2024
+                    <p class="mesReferencia">{{data | mesAnoExtenso}}</p> de 2024
                 </td>
             </tr>
                 
         </table>
 
-        <!-- <div class="divEmpregador">
-            <div class="nomeEmpregador">
-                ARLEY COELHO DA SILVEIRA
-            </div>
 
-            <div class="cei">
-                CEI:
-            </div>
-
-            <div class="nrCei">
-                00060020055088
-            </div>
-
-            <div class="cc">
-                CC:
-            </div>
-
-            <div class="nomeEstabelecimento">
-                FAZ. CAB. DO ONÇA
-                <div class="linhaAbaixoEstabelecimento">
-                    Trabalhador Rural
-                </div>
-
-            </div>
-
-            <div class="folha">
-                Folha Mensal
-                <div class="linhaAbaixoFolhaMensal">
-                    <p class="mesReferencia"></p> de 2024
-                </div>
-            </div>
-        </div> -->
 
         
 
@@ -349,29 +265,7 @@
             
         </div>
 
-        <!-- <div class="divRecibo">
 
-            <div class="declaracaoRecibo">
-                DECLARO TER RECEBIDO A IMPORTÂNCIA LÍQUIDA DISCRIMINADA NESTE RECIBO
-            </div>
-            <div class="dataReciboVazio">
-                ____/____/________
-            </div>
-
-            <div class="assinaturaReciboBranco">
-                _____________________________
-            </div>
-
-            <div class="dataRecibo">
-                DATA
-            </div>
-
-            <div class="assinaturaRecibo">
-                ASSINATURA DO FUNCIONÁRIO
-            </div> -->
-
-
-        <!-- </div> -->
 
         <div id="tabelaDescricao">
             <table>
@@ -386,7 +280,7 @@
                   <td>001</td>
                   <td>SALÁRIO</td>
                   <td>30</td>
-                  <td class="valorSalarioBruto"></td>
+                  <td class="valorSalarioBruto">{{salario | currency:'BRL':'symbol':'1.2-2':'pt-BR'}}</td>
                   <td></td>
                 </tr>
 
@@ -402,7 +296,7 @@
                     <td>013</td>
                     <td>13º SALÁRIO</td>
                     <td>30</td>
-                    <td class="valorSalarioBruto"></td>
+                    <td class="valorSalarioBruto">{{salario | currency:'BRL':'symbol':'1.2-2':'pt-BR'}}</td>
                     <td></td>
                 </tr>
 
@@ -420,30 +314,34 @@
                     <td class="aliquotaEfetivaInss"></td>
                     <td></td>
                     <td class="inss"></td>
-                  </tr>
+                </tr>
 
-                  <tr class = "linhaIrrf decimoTerceiroSalarioDezembro">
+                <tr class = "linhaIrrf decimoTerceiroSalarioDezembro">
                       <td>205</td>
                       <td>IRRF sobre 13º Salário</td>
                       <td class="aliquotaEfetiva"></td>
                       <td></td>
                       <td class="irrf"></td>
-                  </tr>
+                </tr>
                 <tr class="linhaInss">
                   <td>201</td>
                   <td>INSS</td>
-                  <td class="aliquotaEfetivaInss"></td>
+                  <td class="aliquotaEfetivaInss">{{aliquotaEfetiva}}%</td>
                   <td></td>
-                  <td class="inss"></td>
+                  <td class="inss">{{valorInss  | currency:'BRL':'symbol':'1.2-2':'pt-BR'}}</td>
                 </tr>
 
-                <tr class = "linhaIrrf">
-                    <td>203</td>
-                    <td>IRRF</td>
-                    <td class="aliquotaEfetiva"></td>
-                    <td></td>
-                    <td class="irrf"></td>
-                </tr>
+                <ng-template [ngIf]="irrf>0">
+
+                    <tr class = "linhaIrrf">
+                        <td>203</td>
+                        <td>IRRF</td>
+                        <td class="aliquotaEfetiva">{{aliquotaEfetivaIrrf}}%</td>
+                        <td></td>
+                        <td class="irrf">{{irrf   | currency:'BRL':'symbol':'1.2-2':'pt-BR'}}</td>
+                    </tr>
+
+                </ng-template>
 
                 <tr class="fimTabelaDescricao">
                     <td></td>
@@ -465,18 +363,18 @@
                   </tr>
 
                   <tr>
-                    <td class="valorTotalCreditos"></td>
-                    <td class="totalDescontos"></td>
+                    <td class="valorTotalCreditos">{{salario | currency:'BRL':'symbol':'1.2-2':'pt-BR'}}</td>
+                    <td class="totalDescontos">{{totalDescontos | currency:'BRL':'symbol':'1.2-2':'pt-BR'}}</td>
                   </tr>
 
                   <tr>
                     <td class="liquido">Líquido a receber -></td>
-                    <td class="liquido salarioLiquido"><strong></strong></td>
+                    <td class="liquido salarioLiquido"><strong>{{salarioLiquido   | currency:'BRL':'symbol':'1.2-2':'pt-BR'}}</strong></td>
                   </tr>
 
-              </table>
+            </table>
 
-              <table id="tabelaBases">
+            <table id="tabelaBases">
                 <tr>
                     <th>Salário Base</th>
                     <th>Base Cálc. INSS</th>
@@ -487,25 +385,22 @@
                 </tr>
 
                 <tr>
-                    <td class="valorSalarioBruto"></td>
-                    <td class="valorSalarioBruto"></td>
-                    <td class="valorSalarioBruto"></td>
-                    <td class="valorFgts"></td>
-                    <td class="baseCalculoIrrf"></td>
-                    <td class="faixaIrrf"></td>
+                    <td class="valorSalarioBruto">{{salario | currency:'BRL':'symbol':'1.2-2':'pt-BR'}}</td>
+                    <td class="valorSalarioBruto">{{salario | currency:'BRL':'symbol':'1.2-2':'pt-BR'}}</td>
+                    <td class="valorSalarioBruto">{{salario | currency:'BRL':'symbol':'1.2-2':'pt-BR'}}</td>
+                    <td class="valorFgts">{{valorFgts | currency:'BRL':'symbol':'1.2-2':'pt-BR'}}</td>
+                    <td class="baseCalculoIrrf">{{baseCalculoIrrf  | currency:'BRL':'symbol':'1.2-2':'pt-BR'}}</td>
+                    <td class="faixaIrrf">{{faixa}}</td>
                 </tr>
 
-              </table>
+            </table>
+        </div>
 
     </div>
 
 
+</main>
 
-
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
     
- 
+
+<!-- </ng-template> -->

@@ -8,6 +8,16 @@
                 "nomeTrabalhador": "PAULO RICARDO DA SILVA FERREIRA",
                 "matricula": "01112022",
                 "salario": 2300
+            },
+            {
+                "nomeTrabalhador": "VALDECIR FERREIRA DOS SANTOS",
+                "matricula": "01052025",
+                "salario": 3000
+            },
+            {
+                "nomeTrabalhador": "TRABALHADOR TESTE",
+                "matricula": "99999999",
+                "salario": 10000
             }
         ]
     },

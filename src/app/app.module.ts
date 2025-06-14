@@ -7,19 +7,23 @@ import { SelecaoTrabalhadorComponent } from './components/selecao-trabalhador/se
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { provideHttpClient } from '@angular/common/http';
 import { DemonstrativoComponent } from './components/demonstrativo/demonstrativo.component';
+import { MesAnoExtensoPipe } from './mes-ano-extenso.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
-    ,
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     SelecaoTrabalhadorComponent,
-    DemonstrativoComponent
+    DemonstrativoComponent,
+    MesAnoExtensoPipe
 
+  ],
+  exports: [
+ 
   ],
   providers: [
     provideHttpClient()

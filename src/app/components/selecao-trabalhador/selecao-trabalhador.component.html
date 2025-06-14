@@ -47,17 +47,12 @@
         <mat-datepicker-toggle matIconSuffix [for]="dp"></mat-datepicker-toggle>
         <mat-datepicker #dp
                         startView="multi-year"
-                        (monthSelected)="setMonthAndYear($event, dp)"
+                        (monthSelected)="setMonthAndYear($event, dp); onMesChange()"
                         panelClass="example-month-picker">
         </mat-datepicker>
         </mat-form-field>
 
-
-
-   
-
-
-        <button mat-raised-button (click) = "printPDF()">Gerar Demonstrativo</button>
+        <button mat-raised-button (click) = "onClick(); printPDF(); ">Gerar Demonstrativo</button>
 
         <!-- type="submit" -->
 
@@ -65,46 +60,56 @@
 </form>
 
 
-<div *ngIf="resultado" class="resultado">
+<!-- <div *ngIf="resultado" class="resultado">
   <h4>Dados enviados:</h4>
   <p><strong>Empregador:</strong> {{ resultado.empregador }}</p>
   <p><strong>Trabalhador:</strong> {{ resultado.trabalhador }}</p>
   <p><strong>Salário:</strong> {{ resultado.salario }}</p>
   <p><strong>Data:</strong> {{ resultado.data }}</p>
-</div>
+</div> -->
+
+<!-- 
+    <div [hidden]="demonstrativoVisivel">  -->
+
+<!-- style="display: block;"     -->
+        <!-- <div #conteudoPDF > -->
+            
+            <div #conteudoPDF>
+                    <app-demonstrativo></app-demonstrativo>
+                    
+            
+            
+            </div>
 
 
- <div #conteudoPDF style="display: block;">
+<!-- style="display: block;" -->
+                    <div class="divRecibo" #divRecibo >
 
-    <div #conteudoPDF>
-        <app-demonstrativo></app-demonstrativo>
-    </div>
-  
-</div>
+                        <div class="declaracaoRecibo">
+                            DECLARO TER RECEBIDO A IMPORTÂNCIA LÍQUIDA DISCRIMINADA NESTE RECIBO
+                        </div>
+                        <div class="dataReciboVazio">
+                            ____/____/________
+                        </div>
+
+                        <div class="assinaturaReciboBranco">
+                            _____________________________
+                        </div>
+
+                        <div class="dataRecibo">
+                            DATA
+                        </div>
+
+                        <div class="assinaturaRecibo">
+                            ASSINATURA DO FUNCIONÁRIO
+                        </div>
 
 
-           
-                <div class="divRecibo" #divRecibo style="display: block;">
-
-                    <div class="declaracaoRecibo">
-                        DECLARO TER RECEBIDO A IMPORTÂNCIA LÍQUIDA DISCRIMINADA NESTE RECIBO
                     </div>
-                    <div class="dataReciboVazio">
-                        ____/____/________
-                    </div>
 
-                    <div class="assinaturaReciboBranco">
-                        _____________________________
-                    </div>
+            
+    <!-- </div>  -->
 
-                    <div class="dataRecibo">
-                        DATA
-                    </div>
-
-                    <div class="assinaturaRecibo">
-                        ASSINATURA DO FUNCIONÁRIO
-                    </div>
-
-
-                </div>
-         
+    <!-- <ng-template #templateEscondido>
+        <p>Selecione um empregador e um trabalhador para gerar o demonstrativo.</p>
+    </ng-template> -->
